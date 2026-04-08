@@ -1,0 +1,346 @@
+@font-face {
+    font-family: "Futura PT Book";
+    src: url("../fonts/FuturaCyrillicBook.woff") format("woff");
+}
+
+:root {
+    --main-bg: rgb(25, 23, 36, 0.7);
+    --secondary-bg: rgb(38, 35, 58);
+    --main-bg-transparent: rgba(27, 25, 39, 0.5);
+    --main-text: rgb(224, 222, 244);
+    --hovered-text: rgb(250, 249, 255);
+    --inactive-text: rgb(110, 106, 134);
+    --name: rgb(156, 207, 216);
+    --gold: rgb(246, 193, 119);
+    --border: rgba(196, 167, 231, 0.8);
+    --shadow: rgba(110, 106, 134, 0.5);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+nav a {
+    font-size: 1.5rem;
+}
+
+h1,
+h3,
+p {
+    margin: 0;
+}
+
+@media (max-width: 800) {
+    h1 {
+        font-size: 5rem !important;
+    }
+    h2 {
+        font-size: 3.5rem !important;
+    }
+    h3 {
+        font-size: 2rem !important;
+    }
+    p {
+        font-size: 1rem !important;
+    }
+}
+
+h1 {
+    font-size: 7rem;
+}
+
+h2 {
+    text-align: center;
+    font-size: 5rem;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 2.5rem;
+}
+
+h4 {
+    font-size: 2rem;
+}
+
+li,
+p {
+    font-size: 1.5rem;
+}
+
+.logo {
+    width: 2.5rem;
+    padding-right: 0.5rem;
+}
+
+body {
+    overflow-x: hidden;
+    background:
+        radial-gradient(var(--main-bg), var(--main-bg-transparent)),
+        url(../img/bg.png);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    font-family: "Futura PT Book";
+    color: var(--main-text);
+}
+
+section {
+    margin-top: 1rem;
+    margin-inline: auto;
+    max-width: min(80rem, 90%);
+}
+
+#Home {
+    min-height: 100vh;
+}
+
+nav {
+    background-color: var(--main-bg-transparent);
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    box-shadow: 0px 2px var(--shadow);
+    height: 3rem;
+}
+
+nav a {
+    margin-inline: 20px;
+    font-weight: bold;
+    color: var(--main-text);
+    text-decoration: none !important;
+    padding: 10px;
+}
+
+nav a:hover {
+    color: var(--hovered-text);
+    transform: scale(1.2);
+    transition: transform 0.2s ease-in-out;
+}
+
+span {
+    color: rgb(246, 193, 119);
+}
+
+@media (min-width: 1000px) {
+    .home {
+        grid-template-columns: 3fr 2fr !important;
+    }
+}
+
+@media (min-width: 800px) {
+    .home {
+        grid-template-columns: 1fr 1fr !important;
+    }
+}
+
+@media (max-width: 800px) {
+    .home {
+        grid-template-areas:
+            "image"
+            "text" !important;
+        grid-template-columns: 1fr !important;
+        top: 5rem !important;
+        transform: translateY(0%) !important;
+    }
+    .home img {
+        margin-inline: auto !important;
+    }
+    .home div h1 {
+        text-align: center;
+    }
+}
+
+.home {
+    position: relative;
+    grid-template-areas: "text image";
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    top: 50vh;
+    transform: translateY(-50%);
+    max-width: inherit;
+}
+.home div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 640;
+}
+
+.home img {
+    max-width: min(500px, 80%);
+    border-radius: 10px;
+    justify-self: right;
+    margin-right: 20px;
+}
+
+img {
+    max-width: 100%;
+}
+
+#Skills {
+    margin-top: 20vh;
+}
+
+@media (max-width: 500px) {
+    .skill-grid {
+        grid-template-areas:
+            "box1"
+            "box2"
+            "box3" !important;
+        grid-template-columns: 1fr !important;
+    }
+}
+
+.skill-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-areas:
+        "box1 box2"
+        "box3 box3";
+    grid-template-columns: 1fr 1fr;
+}
+
+.skill-grid > div {
+    padding: 2rem;
+    border: 2px var(--border) solid;
+    border-radius: 10px;
+    background-color: var(--secondary-bg);
+}
+
+.list {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.list div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#Projects {
+    margin-top: 10rem;
+    min-width: 100vw;
+    border-block: 2px var(--main-text) solid;
+    background-color: var(--main-bg-transparent);
+}
+
+@media (max-width: 800px) {
+    .projects > div {
+        max-width: 95% !important;
+    }
+    .project {
+        padding-inline: 0px !important;
+    }
+}
+
+.projects > div {
+    padding: 2rem;
+    max-width: 80%;
+    margin-inline: auto;
+}
+
+.img-inactive {
+    opacity: 0.4;
+}
+
+.project-img {
+    border: 2px solid var(--border);
+    border-radius: 2rem;
+    float: right;
+    max-height: 50%;
+    position: sticky;
+}
+
+.projects > div > div {
+    display: flex;
+    flex-direction: column;
+}
+.project {
+    color: var(--main-text);
+    padding-inline: 5rem;
+    display: grid;
+    transform: scale(1.05);
+    transition: transform 0.2s ease-in-out;
+}
+
+.inactive {
+    transform: scale(0.95);
+    color: var(--inactive-text);
+}
+
+.technologies {
+    display: flex;
+    flex-direction: row;
+}
+
+.technologies > img {
+    width: 2rem;
+    padding: 0.5rem;
+    padding-bottom: 1rem;
+}
+
+.is-svg {
+    filter: brightness(0) saturate(100%) invert(90%) sepia(9%) saturate(399%)
+        hue-rotate(205deg) brightness(96%) contrast(99%);
+}
+
+.inactive .is-svg {
+    filter: brightness(0) saturate(100%) invert(48%) sepia(4%) saturate(2578%)
+        hue-rotate(208deg) brightness(84%) contrast(84%);
+}
+
+.null {
+    max-width: 0 !important;
+    border: 0 !important;
+}
+
+#Contacts {
+    margin-top: 20rem;
+    min-width: 100vw;
+    padding: 3rem;
+    border-top: 2px var(--border) solid;
+    background-color: var(--main-bg-transparent);
+    backdrop-filter: blur(5px);
+}
+
+.contacts {
+    gap: 2rem;
+    display: flex;
+    flex-direction: row;
+}
+
+#Contacts > h2 {
+    margin: 0;
+    text-align: start;
+}
+
+.contacts > ul {
+    list-style-type: none;
+}
+
+.contacts a {
+    color: var(--main-text);
+    text-decoration: none !important;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.contacts a:hover {
+    color: var(--hovered-text);
+}
+
+.contacts img {
+    width: 1.5rem;
+}
