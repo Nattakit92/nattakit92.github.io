@@ -1,0 +1,63 @@
+@keyframes left {
+    from {
+        transform: translateX(-10px) scale(0.95);
+        opacity: 20%;
+    }
+    to {
+        transform: translateX(0) scale(1);
+        opacity: 100%;
+    }
+}
+
+@keyframes right {
+    from {
+        transform: translateX(10px) scale(0.95);
+        opacity: 20%;
+    }
+    to {
+        transform: translateX(0) scale(1);
+        opacity: 100%;
+    }
+}
+
+@keyframes top {
+    from {
+        transform: translateY(-100px) scale(0.9);
+        opacity: 20%;
+    }
+    to {
+        transform: translateX(0) scale(1);
+        opacity: 100%;
+    }
+}
+
+@keyframes bottom {
+    from {
+        transform: translateY(10px) scale(0.95);
+        opacity: 20%;
+    }
+    to {
+        transform: translateX(0) scale(1);
+        opacity: 100%;
+    }
+}
+
+.home > img,
+.home > div > *,
+h2:not(#Contacts > h2),
+.skill-grid > div {
+    opacity: 0;
+}
+
+.appear-left {
+    animation: left 0.75s ease-in forwards;
+}
+.appear-right {
+    animation: right 0.75s ease-in forwards;
+}
+.appear-top {
+    animation: top 1s ease-in forwards;
+}
+.appear-bottom {
+    animation: bottom 0.75s ease-in forwards;
+}

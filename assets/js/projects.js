@@ -1,9 +1,8 @@
 window.addEventListener("load", onload);
 window.addEventListener("resize", onload);
-addEventListener("scroll", onscroll);
+window.addEventListener("scroll", onscroll);
 
 function onload() {
-  document.body.style.visibility = "visible";
   let project_area = document.querySelector(".projects > div");
   let projects = document.querySelectorAll(".project");
   let image = document.querySelector(".project-img");

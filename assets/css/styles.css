@@ -75,7 +75,8 @@ p {
 
 body {
     visibility: hidden;
-    overflow-x: hidden;
+    overflow-x: clip;
+    background-color: var(--main-bg);
     background:
         radial-gradient(var(--main-bg), var(--main-bg-transparent)),
         url(../img/bg.png);
@@ -129,19 +130,19 @@ span {
     color: rgb(246, 193, 119);
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1200px) {
     .home {
         grid-template-columns: 3fr 2fr !important;
     }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 1000px) {
     .home {
         grid-template-columns: 1fr 1fr !important;
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
     .home {
         grid-template-areas:
             "image"
@@ -159,6 +160,7 @@ span {
 }
 
 .home {
+    margin-inline: auto;
     position: relative;
     grid-template-areas: "text image";
     display: grid;
@@ -306,9 +308,28 @@ img {
     border: 0 !important;
 }
 
+@media (max-width: 1000px) {
+    .contacts a {
+        font-size: 1.2rem !important;
+    }
+}
+
+@media (max-width: 850px) {
+    .contacts {
+        flex-direction: column !important;
+    }
+}
+
+@media (max-width: 500px) {
+    .contacts a {
+        font-size: 1rem !important;
+    }
+}
+
 #Contacts {
     margin-top: 20rem;
-    min-width: 100vw;
+    width: 100%;
+    max-width: calc(100% - 6rem);
     padding: 3rem;
     border-top: 2px var(--border) solid;
     background-color: var(--main-bg-transparent);
@@ -328,9 +349,11 @@ img {
 
 .contacts > ul {
     list-style-type: none;
+    padding: 0;
 }
 
 .contacts a {
+    font-size: 1.5rem;
     color: var(--main-text);
     text-decoration: none !important;
     display: flex;
