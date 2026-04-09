@@ -21,6 +21,7 @@ function onload() {
     if (projects[i].offsetHeight < images.offsetHeight) {
       projects[i].style.minHeight = images.offsetHeight + "px";
     }
+    new Image().src = "assets/img/Projects/" + i + ".png";
   }
 
   images.style.top = (window.innerHeight - images.offsetHeight) / 2;
