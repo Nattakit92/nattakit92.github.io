@@ -1,7 +1,7 @@
 window.addEventListener("load", onload);
 window.addEventListener("resize", onload);
 
-let show = false;
+let show = true;
 function onload() {
   let menu = document.querySelector(".menu");
   if (window.innerWidth > 500) {
