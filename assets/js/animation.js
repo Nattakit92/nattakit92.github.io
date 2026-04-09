@@ -6,7 +6,7 @@ async function sleep(msec) {
 }
 
 async function onload() {
-  document.body.style.visibility = "visible";
+  document.body.style.display = "unset";
   let home = document.querySelector(".home > div");
   let home_decendent = home.children;
   for (let i = 0; i < home_decendent.length; i++) {
@@ -26,6 +26,9 @@ function onscroll() {
   }
   let skills = document.querySelectorAll(".skill-grid > div");
   let animations = ["appear-left", "appear-right", "appear-bottom"];
+  if (window.innerWidth < 500) {
+    animations[2] = "appear-left";
+  }
   for (let i = 0; i < skills.length; i++) {
     pos = skills[i].getBoundingClientRect().top;
     if (pos < window.innerHeight) {
