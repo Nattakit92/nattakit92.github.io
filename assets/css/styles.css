@@ -307,8 +307,9 @@ img {
 
 .project-img {
     border: 2px solid var(--border);
-    border-radius: 2rem;
+    border-radius: 10px;
     margin-bottom: 5rem;
+    margin-top: 1rem;
 }
 
 .projects > div > div {
@@ -326,6 +327,7 @@ img {
 .inactive {
     transform: scale(0.95);
     color: var(--inactive-text);
+    transition: transform 0.2s ease-in-out;
 }
 
 .inactive img {
