@@ -79,7 +79,7 @@ body {
     background-color: var(--main-bg);
     background:
         radial-gradient(var(--main-bg), var(--main-bg-transparent)),
-        url(../img/bg.png);
+        url(../img/bg_compress.png);
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
